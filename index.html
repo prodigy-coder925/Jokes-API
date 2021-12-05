@@ -55,6 +55,8 @@
             outline: none;
             position: fixed;
             padding: 1rem 2rem;
+            color: orange;
+            font-weight: 700;
             border-radius: 25px;
             border-style: none;
             border: 2px solid orange;
@@ -79,6 +81,7 @@
         #delivery {
             font-size: 1rem;
             cursor: pointer;
+            font-style: italic;
         }
 
         .text {
@@ -106,6 +109,31 @@
                 min-width: 200px;
                 max-height: 400px;
                 /* background-color: red; */
+            }
+        }
+        @media only screen and (max-width: 480px) {
+
+            .container {
+                min-height: 400px;
+                max-width: 30vw;
+                display: flex;
+                align-items: center;
+                flex-direction: column;
+                justify-content: center;
+                
+            }
+            p{
+                font-size: 2rem;
+            }
+            .delivery{
+                font-size: .6rem;
+            }
+            .text{
+                max-height: 400px;
+                /* background-color: red; */
+            }
+            button{
+                padding: 1rem 1rem;
             }
         }
     </style>
@@ -145,7 +173,7 @@
                     })
                 }
                 else {
-                    $.innerText = joke
+                    $.innerText = joke +' '+emojis[Math.floor(Math.random()*emojis.length)]
                     $$.style.display = 'None'
 
                 }
